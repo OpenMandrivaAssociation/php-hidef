@@ -6,7 +6,7 @@
 Summary:	A PHP module providing constants for real
 Name:		php-%{modname}
 Version:	0.1.0
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/hidef/
@@ -33,6 +33,15 @@ find . -type f|xargs file|grep 'CRLF'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 find . -type f|xargs file|grep 'text'|cut -d: -f1|xargs perl -p -i -e 's/\r//'
 
 %build
+export CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export FFLAGS="%{optflags}"
+
+%if %mdkversion >= 200710
+export CFLAGS="$CFLAGS -fstack-protector"
+export CXXFLAGS="$CXXFLAGS -fstack-protector"
+export FFLAGS="$FFLAGS -fstack-protector"
+%endif
 
 phpize
 %configure2_5x --with-libdir=%{_lib} \
@@ -62,5 +71,3 @@ EOF
 %dir %{_sysconfdir}/php.d/%{modname}
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/php.d/%{inifile}
 %attr(0755,root,root) %{_libdir}/php/extensions/%{soname}
-
-
