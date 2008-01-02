@@ -13,6 +13,7 @@ URL:		http://pecl.php.net/package/hidef/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Allow definition of user defined constants in simple ini files, which are then
