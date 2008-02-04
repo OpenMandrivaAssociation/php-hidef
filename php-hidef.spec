@@ -6,7 +6,7 @@
 Summary:	A PHP module providing constants for real
 Name:		php-%{modname}
 Version:	0.1.0
-Release:	%mkrel 6
+Release:	%mkrel 7
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/hidef/
