@@ -6,14 +6,14 @@
 Summary:	A PHP module providing constants for real
 Name:		php-%{modname}
 Version:	0.1.0
-Release:	%mkrel 7
+Release:	%mkrel 8
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/hidef/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Allow definition of user defined constants in simple ini files, which are then
