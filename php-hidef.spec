@@ -5,12 +5,12 @@
 
 Summary:	A PHP module providing constants for real
 Name:		php-%{modname}
-Version:	0.1.0
-Release:	%mkrel 9
+Version:	0.1.1
+Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/hidef/
-Source0:	http://pecl.php.net/get/%{modname}-%{version}.tar.bz2
+Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -43,7 +43,7 @@ phpize
 mv modules/*.so .
 
 %install
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}%{_libdir}/php/extensions
 install -d %{buildroot}%{_sysconfdir}/php.d/%{modname}
@@ -67,7 +67,7 @@ if [ "$1" = "0" ]; then
 fi
 
 %clean
-[ "%{buildroot}" != "/" ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files 
 %defattr(-,root,root)
