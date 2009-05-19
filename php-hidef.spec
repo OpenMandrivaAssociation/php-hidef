@@ -11,6 +11,7 @@ Group:		Development/PHP
 License:	PHP License
 URL:		http://pecl.php.net/package/hidef/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
+Patch0:		hidef-0.1.1-php53_fix.diff
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -24,6 +25,8 @@ penalties.
 
 %setup -q -n %{modname}-%{version}
 [ "../package*.xml" != "/" ] && mv ../package*.xml .
+
+%patch0 -p1
 
 # fix permissions
 find . -type f | xargs chmod 644
