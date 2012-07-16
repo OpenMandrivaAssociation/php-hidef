@@ -5,7 +5,7 @@
 
 Summary:	A PHP module providing constants for real
 Name:		php-%{modname}
-Version:	0.1.12
+Version:	0.1.13
 Release:	%mkrel 1
 Group:		Development/PHP
 License:	PHP License
