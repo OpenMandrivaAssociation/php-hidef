@@ -9,7 +9,7 @@ Version:	0.1.13
 Release:	2
 Group:		Development/PHP
 License:	PHP License
-URL:		http://pecl.php.net/package/hidef/
+URL:		https://pecl.php.net/package/hidef/
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 BuildRequires:	php-devel >= 3:5.2.1
 BuildRequires:	file
